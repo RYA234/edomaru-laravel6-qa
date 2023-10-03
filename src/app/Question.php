@@ -27,4 +27,19 @@ class Question extends Model
     {
         return $this->created_at->diffForHumans();
     }
+
+    public function getStatusAttribute()
+    {
+        if($this->answers_count > 0 )
+        {
+            if($this->answers > 0)
+            {
+                if($this->best_answers_id > 0)
+                {
+                    return "answerd-acdepted";
+                }
+            }
+            return "unanswerd";
+        }
+    }
 }
