@@ -16,7 +16,9 @@
                 </div>
 
                 <div class="card-body">
-                   @foreach ($questions as $question)
+                    @include ('layouts._messages')
+
+                    @foreach ($questions as $question)
                         <div class="media">
                             <div class="q-flex flex-clomun counters">
                                 <div class="vote">
