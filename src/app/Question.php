@@ -32,7 +32,7 @@ class Question extends Model
     {
         if($this->answers_count > 0 )
         {
-            if($this->answers > 0)
+            if($this->answers_count > 0)
             {
                 if($this->best_answers_id > 0)
                 {
@@ -45,5 +45,9 @@ class Question extends Model
     public function getBodyHtmlAttribute()
     {
         return \Parsedown::instance()->text($this->body);
+    }
+    public function answers()
+    {
+        return $this->hasMany(Answer::class);
     }
 }
