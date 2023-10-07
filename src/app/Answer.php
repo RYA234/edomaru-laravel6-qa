@@ -28,4 +28,9 @@ class Answer extends Model
             $answer->question->save();
         });
     }
+
+    public function getCreatedDataAttribute()
+    {
+        return $this->created_at->diffForHumans();
+    }
 }
