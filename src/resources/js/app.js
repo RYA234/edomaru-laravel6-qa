@@ -5,7 +5,9 @@
  */
 
 require('./bootstrap');
-
+require('./fontawesome');
+import {config,library,dom } from '@fortawesome/fontawesome-svg-core';
+config.autoReplaceSvg = 'nest';
 window.Vue = require('vue');
 
 /**
